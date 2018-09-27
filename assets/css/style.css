@@ -1,0 +1,19 @@
+body {
+    background-color: blue;
+    background-image: url(../images/water.jpg);
+    height:100%;
+    color: white;
+    text-align: center;
+    font-size:30px;
+}
+
+h1 {
+    margin-top:25px;
+    font-size: 50px;
+}
+#press {
+    margin-top:25px;
+}
+#game {
+    margin-top:25px;
+}
