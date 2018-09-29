@@ -10,9 +10,6 @@ window.onload = function game() {
     var guessed = []
     var correct = []
 
-    for (i = 0; i < randomAnswers.length; i++) {
-
-    }
 
     function printword() {
         var word = ""
@@ -41,44 +38,39 @@ window.onload = function game() {
         //if the choice is a letter
         if (letters.indexOf(userChoice) !== -1) {
             //if the choice is in the word
-
             if (randomAnswers.indexOf(userChoice) !== -1) {
-                //randomAnswers.charAt(0)
-                //if the choice is not in already in the corret array
                 var count = 0
-                       for(var h = 0; h <randomAnswers.length; h++){
-                        if(randomAnswers.charAt(h) === userChoice){
-                            count++
-                            console.log(count)
-                            console.log(correct)
-                        }
+                for (var h = 0; h < randomAnswers.length; h++) {
+                    if (randomAnswers.charAt(h) === userChoice) {
+                        count++
                     }
-                    for(var k = 0; k < count; k++){
-                correct.push(userChoice)
-                    }
+                }
+                for (var k = 0; k < count; k++) {
+                    correct.push(userChoice)
+                }
                 printword()
-                
-                    if (correct.length === wordLength) {
+
+                if (correct.length === wordLength) {
                     wins++
                     alert("You Win!")
                     game()
-                    }
-                    else {
-                    }
+                }
+                else {
+                }
 
             }
             //if the choice is not in the word
             else {
-            //if the choice is not already in the guessed array
+                //if the choice is not already in the guessed array
                 if (guessed.indexOf(userChoice) == -1) {
-                guessed.push(userChoice)
-                left--
-                document.getElementById("already").innerHTML = (("Letters already guessed: ") + (guessed))
-                document.getElementById("remaining").innerHTML = (("Number of guesses left: ") + (left))
-                //if the max number of guesses has been reached
+                    guessed.push(userChoice)
+                    left--
+                    document.getElementById("already").innerHTML = (("Letters already guessed: ") + (guessed))
+                    document.getElementById("remaining").innerHTML = (("Number of guesses left: ") + (left))
+                    //if the max number of guesses has been reached
                     if (guessed.length > 14) {
-                    alert("You Loose")
-                    game()
+                        alert("You Loose")
+                        game()
                     }
                     else {
                     }
@@ -90,7 +82,7 @@ window.onload = function game() {
 
 
         }
-        
+
         else {
             document.getElementById("press").innerHTML = ("Plese select a letter to continue")
         }
